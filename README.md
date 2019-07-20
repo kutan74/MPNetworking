@@ -6,6 +6,16 @@
 
 Network abstraction layer written in Swift to use in MenaPay iOS projects
 
+## Installation
+
+MPNetworking supports CocoaPods 
+
+```swift
+pod 'MPNetworking', '0.0.1'
+```
+
+
+
 ## NetworkManager
 
 NetworkManager must be configured with at least four paramaters to make a call that doesn't requier bearer authentication
@@ -46,7 +56,7 @@ self.networking.setToken(token)
 
 Afterwards there is no need to set the token again. NetworkManager will handle if the token header is required for the desired endpoint
 
-## # Endpoint
+## Endpoint
 
 There are two parameters required to make a call with NetworkManager. An Endpoint and an Object with codable type. To create an endpoint it is recommended to add an static extension method for Endpoint that returns Endpoint object
 
@@ -117,7 +127,7 @@ class CountryLoader {
 
 
 
-## # NetworkError
+## NetworkError
 
 At some if the NetworkManager fails to make the request, it returns a NetworkError
 
