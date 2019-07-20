@@ -7,6 +7,6 @@
 //
 
 public enum EncodingType {
-    case query
+    case query    
     case body
 }

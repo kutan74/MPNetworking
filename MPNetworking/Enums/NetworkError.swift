@@ -13,7 +13,7 @@ import Foundation
 public enum NetworkError: Error {
     case unknownError
     case networkFailure
-    case unauthorized
+    case unAuthorized
     case emptyJSONData
 }
 
@@ -26,7 +26,7 @@ extension NetworkError: LocalizedError {
             return "!!! Empty json returned from the server !!!"
         case .networkFailure:
             return "Network failure happened"
-        case .unauthorized:
+        case .unAuthorized:
             return "Session timed out. Please log in"
         case .unknownError:
             return "Unknown error happened. Weird !!"

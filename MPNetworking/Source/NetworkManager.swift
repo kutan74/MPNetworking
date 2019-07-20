@@ -51,7 +51,7 @@ extension NetworkManager {
      
      - Parameter token: Bearer token being received from API response
      */
-    func setToken(_ token: String) {
+    public func setToken(_ token: String) {
         self.token = token
     }
 }
@@ -80,16 +80,16 @@ extension NetworkManager: EndpointProtocol {
         }
         
         var request = URLRequest(endpoint: endpoint, baseURL: baseURL)
-        
+                
         /// Default client parameters
-        request.addValue(clientType, forHTTPHeaderField: "menapay-version")
-        request.addValue(clientVersion, forHTTPHeaderField: "menapay-client")
+        request.addValue(clientVersion, forHTTPHeaderField: "menapay-version")
+        request.addValue(clientType, forHTTPHeaderField: "menapay-client")
         request.addValue(userType, forHTTPHeaderField: "userType")
         
         if endpoint.authenticationRequired {
-            request.addValue("Bearer \(token!)", forHTTPHeaderField: "Authentication")
+            request.addValue("Bearer \(token!)", forHTTPHeaderField: "Authorization")
         }
-        
+                
         let task = session.dataTask(request: request, completionHandler: { [weak self] data, response, error in
             let httpResponse = response as? HTTPURLResponse
             self?.handleDataResponse(data: data, response: httpResponse, error: error, completion: completion)
@@ -121,7 +121,7 @@ extension NetworkManager: EndpointProtocol {
             guard let data = data, let model = try? JSONDecoder().decode(T.self, from: data) else { return completion(.failure(.unknownError)) }
             completion(.success(model))
         case 401:
-            completion(.failure(.unauthorized))
+            completion(.failure(.unAuthorized))
         default:
             completion(.failure(.unknownError))
         }

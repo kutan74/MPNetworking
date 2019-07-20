@@ -12,7 +12,7 @@ import Foundation
 
 extension URLRequest {
     /**
-     Handles query parameters of the request
+     Handles body parameters of the request
      
      - Parameter endpoint: Endpoint being requested
      - Parameter baseURL: BaseURL of the endpoint being requested

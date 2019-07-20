@@ -12,7 +12,7 @@ import Foundation
 
 extension URLComponents {
     /**
-     Handles body parameters of the request
+     Handles query parameters of the request
      
      - Parameter endpoint: Endpoint being requested
      - Parameter baseURL: BaseURL of the endpoint being requested
@@ -23,8 +23,9 @@ extension URLComponents {
         
         guard case let .requestParameters(parameters) = endpoint.task, endpoint.parametersEncoding == .query else { return }
         
-        queryItems = parameters.map { key, value in
+        queryItems = parameters.map { key, value in            
             return URLQueryItem(name: key, value: String(describing: value))
         }
+        
     }
 }
