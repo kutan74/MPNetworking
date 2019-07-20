@@ -1,6 +1,6 @@
 
 
-# # MPNetworking
+# MPNetworking
 
 ![CocoaPods compatible](https://img.shields.io/cocoapods/p/MPNetworking.svg) [![CocoaPods compatible](https://img.shields.io/cocoapods/v/MPNetworking.svg)](https://cocoapods.org/pods/MPNetworking)
 
