@@ -2,7 +2,7 @@
 
 # # MPNetworking
 
-![CocoaPods compatible](https://img.shields.io/cocoapods/p/MPNetworking.svg)[![CocoaPods compatible](https://img.shields.io/cocoapods/v/MPNetworking.svg)](https://cocoapods.org/pods/MPNetworking)
+![CocoaPods compatible](https://img.shields.io/cocoapods/p/MPNetworking.svg) [![CocoaPods compatible](https://img.shields.io/cocoapods/v/MPNetworking.svg)](https://cocoapods.org/pods/MPNetworking)
 
 Network abstraction layer written in Swift to use in MenaPay iOS projects
 
@@ -17,8 +17,6 @@ NetworkManager must be configured with at least four paramaters to make a call t
 - clientVersion
 - clientType
 - userType
-
-
 
 ```swift
 import Foundation
