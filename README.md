@@ -25,10 +25,10 @@ import Foundation
 import MPNetworking
 
 class ViewController: UIViewController {
-		
-  	var networking: NetworkManager!
-    
-    override func viewDidLoad() {
+  
+  var networking: NetworkManager!		
+
+  override func viewDidLoad() {
         super.viewDidLoad()
         
         networking = NetworkManager(environment: .staging,
@@ -109,7 +109,7 @@ class CountryLoader {
             case .success(let countries):
               	self.handleCountryList(countries)								
             case .failure(let error):
-								self.handleError(error)
+	              self.handleError(error)								
             }
         }
     }
