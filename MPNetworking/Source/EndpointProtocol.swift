@@ -7,6 +7,6 @@
 //
 
 public protocol EndpointProtocol {
-    func request<T>(endpoint: Endpoint,
-                    completion: @escaping (NetworkResponse<T>) -> ()) where T: Decodable
+    func request(endpoint: Endpoint,
+                    completion: @escaping (NetworkResponse) -> ())
 }

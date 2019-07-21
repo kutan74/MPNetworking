@@ -71,8 +71,8 @@ extension NetworkManager: EndpointProtocol {
      
      - Returns: The generic type T
      */
-    public func request<T>(endpoint: Endpoint,
-                           completion: @escaping (NetworkResponse<T>) -> ()) where T : Decodable {
+    public func request(endpoint: Endpoint,
+                           completion: @escaping (NetworkResponse) -> ()) {
         
         guard let baseURL = URL(string: environment.baseURL) else {
             preconditionFailure("Failed to connect to host")
@@ -107,10 +107,10 @@ extension NetworkManager: EndpointProtocol {
      - Returns: NetworkResponse
             - In case server returns 401 it means the current session of the user is timed out
      */
-    private func handleDataResponse<T: Decodable>(data: Data?,
+    private func handleDataResponse(data: Data?,
                                                   response: HTTPURLResponse?,
                                                   error: Error?,
-                                                  completion: (NetworkResponse<T>) -> ()) {
+                                                  completion: (NetworkResponse) -> ()) {
         
         guard error == nil else { return completion(.failure(.unknownError)) }
         guard let response = response else { return completion(.failure(.emptyJSONData)) }

@@ -6,7 +6,7 @@
 //  Copyright © 2019 KUTAN ÇINGISIZ. All rights reserved.
 //
 
-public enum NetworkResponse<T> {
+public enum NetworkResponse {
     case success(Data)
     case failure(NetworkError)
 }
