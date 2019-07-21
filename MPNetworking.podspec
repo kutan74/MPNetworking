@@ -12,7 +12,13 @@ Pod::Spec.new do |s|
   s.platform = :ios, '10.0'
   s.source       = { :git => "https://github.com/kutan74/MPNetworking.git", :tag => s.version }
   s.swift_version = '4.2'  
-  s.source_files = "Source/"
+  s.default_subspec = "Source"
+
+  s.subspec "Source" do |ss|
+    ss.source_files  = "Source/", "Extensions/"    
+    ss.framework  = "Foundation"
+  end
+  
 end
 
 
