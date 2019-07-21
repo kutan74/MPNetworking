@@ -93,6 +93,7 @@
 		A02F71C622E322CE00A63745 /* MPNetworking */ = {
 			isa = PBXGroup;
 			children = (
+				A02F71DC22E323FA00A63745 /* Endpoint.swift */,
 				A02F71D122E322F900A63745 /* Enums */,
 				A02F71D022E322DB00A63745 /* Extensions */,
 				A02F71CF22E322D300A63745 /* Source */,
@@ -105,7 +106,6 @@
 		A02F71CF22E322D300A63745 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				A02F71DC22E323FA00A63745 /* Endpoint.swift */,
 				A02F71DE22E3245E00A63745 /* EndpointProtocol.swift */,
 				A02F71E022E324C600A63745 /* NetworkManager.swift */,
 				A02F71E222E3254F00A63745 /* NetworkManagerProtocol.swift */,
