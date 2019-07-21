@@ -9,7 +9,7 @@
 
 // MARK: Endpoint
 
-public struct Endpoint {
+public class Endpoint {
     
     /// Path of the api call
     var path: String
