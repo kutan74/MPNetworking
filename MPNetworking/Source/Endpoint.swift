@@ -9,7 +9,7 @@
 
 // MARK: Endpoint
 
-public class Endpoint {
+open class Endpoint {
     
     /// Path of the api call
     var path: String
