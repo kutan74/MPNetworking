@@ -7,10 +7,9 @@ Pod::Spec.new do |s|
   EOS
   s.homepage     = "https://github.com/kutan74/MPNetworking"
   s.license      = { :type => "MIT", :file => "LICENSE" }
-  s.author             = { "Kutan Çıngısız" => "cingisiz.akutan@gmail.com" }
-  s.social_media_url   = "https://twitter.com/kutancingisiz"
+  s.author             = { "Kutan Çıngısız" => "cingisiz.akutan@gmail.com" }  
   s.platform = :ios, '10.0'
-  s.source       = { :git => "https://github.com/kutan74/MPNetworking.git", :tag => s.version }
+  s.source       = { :git => "https://github.com/kutan74/MPNetworking.git", :tag => s.version.to_s }
   s.swift_version = '4.2'  
   s.source_files  = "MPNetworking/Source/**/*"
   s.frameworks  = "Foundation"
