@@ -7,6 +7,6 @@
 //
 
 public enum NetworkResponse<T> {
-    case success(T)
+    case success(Data)
     case failure(NetworkError)
 }

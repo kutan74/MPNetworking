@@ -71,8 +71,7 @@ extension NetworkManager: EndpointProtocol {
      
      - Returns: The generic type T
      */
-    public func request<T>(type: T.Type,
-                           endpoint: Endpoint,
+    public func request<T>(endpoint: Endpoint,
                            completion: @escaping (NetworkResponse<T>) -> ()) where T : Decodable {
         
         guard let baseURL = URL(string: environment.baseURL) else {
@@ -118,8 +117,10 @@ extension NetworkManager: EndpointProtocol {
         
         switch response.statusCode {
         case 200...299:
-            guard let data = data, let model = try? JSONDecoder().decode(T.self, from: data) else { return completion(.failure(.unknownError)) }
-            completion(.success(model))
+            guard let data = data else {
+                return completion(.failure(.emptyJSONData))
+            }
+            completion(.success(data))
         case 401:
             completion(.failure(.unAuthorized))
         default:
