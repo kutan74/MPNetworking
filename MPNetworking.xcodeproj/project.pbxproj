@@ -104,6 +104,8 @@
 		A02F71CF22E322D300A63745 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				A02F71E422E326D500A63745 /* URLRequest+Endpoint.swift */,
+				A02F71E622E326F000A63745 /* URLComponents+Endpoint.swift */,
 				A02F71D222E3230C00A63745 /* HTTPMethod.swift */,
 				A02F71D422E3234A00A63745 /* Task.swift */,
 				A02F71D622E3238200A63745 /* NetworkError.swift */,
@@ -121,8 +123,6 @@
 		A02F71D022E322DB00A63745 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				A02F71E422E326D500A63745 /* URLRequest+Endpoint.swift */,
-				A02F71E622E326F000A63745 /* URLComponents+Endpoint.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
