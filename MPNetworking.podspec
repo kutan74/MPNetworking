@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/kutan74/MPNetworking.git", :tag => s.version }
   s.swift_version = '4.2'
   s.default_subspec = "Source"
-  s.source_files = "MPNetworking/Source/**/*.{h,m}"
+  s.source_files = "Source/"
 end
 
 
