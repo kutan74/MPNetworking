@@ -93,8 +93,6 @@
 		A02F71C622E322CE00A63745 /* MPNetworking */ = {
 			isa = PBXGroup;
 			children = (
-				A02F71DC22E323FA00A63745 /* Endpoint.swift */,
-				A02F71D122E322F900A63745 /* Enums */,
 				A02F71D022E322DB00A63745 /* Extensions */,
 				A02F71CF22E322D300A63745 /* Source */,
 				A02F71C722E322CE00A63745 /* MPNetworking.h */,
@@ -106,6 +104,13 @@
 		A02F71CF22E322D300A63745 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				A02F71D222E3230C00A63745 /* HTTPMethod.swift */,
+				A02F71D422E3234A00A63745 /* Task.swift */,
+				A02F71D622E3238200A63745 /* NetworkError.swift */,
+				A02F71D822E323AD00A63745 /* NetworkResponse.swift */,
+				A02F71DA22E323D600A63745 /* EncodingType.swift */,
+				A02F720222E3301300A63745 /* APIEnvironment.swift */,
+				A02F71DC22E323FA00A63745 /* Endpoint.swift */,
 				A02F71DE22E3245E00A63745 /* EndpointProtocol.swift */,
 				A02F71E022E324C600A63745 /* NetworkManager.swift */,
 				A02F71E222E3254F00A63745 /* NetworkManagerProtocol.swift */,
@@ -120,19 +125,6 @@
 				A02F71E622E326F000A63745 /* URLComponents+Endpoint.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		A02F71D122E322F900A63745 /* Enums */ = {
-			isa = PBXGroup;
-			children = (
-				A02F71D222E3230C00A63745 /* HTTPMethod.swift */,
-				A02F71D422E3234A00A63745 /* Task.swift */,
-				A02F71D622E3238200A63745 /* NetworkError.swift */,
-				A02F71D822E323AD00A63745 /* NetworkResponse.swift */,
-				A02F71DA22E323D600A63745 /* EncodingType.swift */,
-				A02F720222E3301300A63745 /* APIEnvironment.swift */,
-			);
-			path = Enums;
 			sourceTree = "<group>";
 		};
 		A02F71ED22E327A800A63745 /* Examples */ = {
