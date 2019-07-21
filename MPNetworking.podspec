@@ -11,8 +11,7 @@ Pod::Spec.new do |s|
   s.social_media_url   = "https://twitter.com/kutancingisiz"
   s.platform = :ios, '10.0'
   s.source       = { :git => "https://github.com/kutan74/MPNetworking.git", :tag => s.version }
-  s.swift_version = '4.2'
-  s.default_subspec = "Source"
+  s.swift_version = '4.2'  
   s.source_files = "Source/"
 end
 
