@@ -14,6 +14,7 @@ public enum APIEnvironment {
     case staging
     case development
     case live
+    case local
 }
 
 // MARK: API Environment BaseURL
@@ -27,6 +28,8 @@ extension APIEnvironment {
             return "https://staging.menapay.io"
         case .live:
             return "https://api.menapay.io"
+        case .local:
+            return "https://192.168.1.38"
         }
     }
 }
