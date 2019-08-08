@@ -9,10 +9,12 @@
 
 /// Public typealias representing [String: Any]
 public typealias Parameters = [String: Any]
+public typealias RawBodyParameter = Data
 
 // MARK: Task
 
 public enum Task {
     case requestPlain
     case requestParameters(Parameters)
+    case requestRawBody(RawBodyParameter)
 }

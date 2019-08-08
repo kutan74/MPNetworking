@@ -24,11 +24,20 @@ extension URLRequest {
         
         httpMethod = endpoint.method.rawValue
         
-        guard case let .requestParameters(parameters) = endpoint.task, endpoint.parametersEncoding == .body else {
+        guard endpoint.parametersEncoding == .body else {
             return
         }
         
-        httpBody = try? JSONSerialization.data(withJSONObject: parameters)
+        switch endpoint.task {
+        case .requestParameters(let parameters):
+            httpBody = try? JSONSerialization.data(withJSONObject: parameters)
+        case .requestRawBody(let parameters):
+            httpBody = parameters
+        default:
+            break
+        }
+        
+        
         setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
     }
 }
