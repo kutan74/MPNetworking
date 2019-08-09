@@ -1,0 +1,22 @@
+Localizable
+
+"Receive Token" = "";
+"Send Token" = "";
+"MenaPay Token Wallet" = "";
+"Click on the button above to start token transfer." = "";
+"SENT" = "";
+"RECEVIED" = "";
+"Please enter the Wallet ID of the person you want to send MenaPay Token to." = "";
+"Please enter the amount of MenaPay Token you want to send." = "";
+"Please scan the QR code of the person you wish to send the MenaPay Token to." = "";
+"Available Transfer Credit" = "";
+"Share With Friends" = "";
+"Join Community" = "";
+"Sharing" = "";
+"MenaPay Help" = "";
+"What is Transfer Credit?" = "";
+"Amount of Transfer Credit to be used" = "";
+"Back to MenaPay Wallet" = "";
+"Amount of Transfer Credit remaining" = "";
+"Your token transaction was successful." = "";
+

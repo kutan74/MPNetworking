@@ -15,6 +15,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        let networking = NetworkManager(environment: .development, userType: "", clientType: "", clientVersion: "")
+        networking.setToken("")
+        networking.request(endpoint: .getUserBalance()) { _ in
+            
+        }
+        
+        
+        
     }
 
 
@@ -22,7 +30,7 @@ class ViewController: UIViewController {
 
 extension Endpoint {
     static func getUserBalance() -> Endpoint {
-        return Endpoint(path: "/user/balance",
+        return Endpoint(path: "/user/update-streamlabs-wallet",
                         method: .get, task: .requestPlain,
                         parametersEncoding: .query)
     }

@@ -23,7 +23,7 @@ extension APIEnvironment {
     var baseURL: String {
         switch self {
         case .development:
-            return "dev-menapay-current.eu-west-1.elasticbeanstalk.com"
+            return "http://dev-menapay-current.eu-west-1.elasticbeanstalk.com"
         case .staging:
             return "https://staging.menapay.io"
         case .live:
