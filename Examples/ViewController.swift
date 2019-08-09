@@ -13,25 +13,9 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-        let networking = NetworkManager(environment: .development, userType: "", clientType: "", clientVersion: "")
-        networking.setToken("")
-        networking.request(endpoint: .getUserBalance()) { _ in
-            
-        }
-        
-        
-        
+        // Do any additional setup after loading the view.                
     }
 
 
 }
 
-extension Endpoint {
-    static func getUserBalance() -> Endpoint {
-        return Endpoint(path: "/user/update-streamlabs-wallet",
-                        method: .get, task: .requestPlain,
-                        parametersEncoding: .query)
-    }
-}

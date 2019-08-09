@@ -19,7 +19,7 @@ open class NetworkManager {
     private var token: String?
     
     /// API Environment
-    private let environment: APIEnvironment
+    private let baseURL: String
     
     /// MenaPay User Type
     private let userType: String
@@ -31,12 +31,12 @@ open class NetworkManager {
     private let clientVersion: String
     
     public init(session: NetworkMangerProtocol = URLSession.shared,
-                environment: APIEnvironment,
+                baseURL: String,
                 userType: String,
                 clientType: String,
                 clientVersion: String) {
         self.session = session
-        self.environment = environment
+        self.baseURL = baseURL
         self.userType = userType
         self.clientType = clientType
         self.clientVersion = clientVersion
@@ -74,7 +74,7 @@ extension NetworkManager: EndpointProtocol {
     public func request(endpoint: Endpoint,
                            completion: @escaping (NetworkResponse) -> ()) {
         
-        guard let baseURL = URL(string: environment.baseURL) else {
+        guard let baseURL = URL(string: baseURL) else {
             preconditionFailure("Failed to connect to host")
         }
         

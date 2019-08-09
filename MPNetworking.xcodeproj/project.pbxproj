@@ -19,7 +19,6 @@
 		A02F71E322E3254F00A63745 /* NetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F71E222E3254F00A63745 /* NetworkManagerProtocol.swift */; };
 		A02F71E522E326D500A63745 /* URLRequest+Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F71E422E326D500A63745 /* URLRequest+Endpoint.swift */; };
 		A02F71E722E326F000A63745 /* URLComponents+Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F71E622E326F000A63745 /* URLComponents+Endpoint.swift */; };
-		A02F720322E3301300A63745 /* APIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F720222E3301300A63745 /* APIEnvironment.swift */; };
 		A02F720F22E4661F00A63745 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F720E22E4661F00A63745 /* AppDelegate.swift */; };
 		A02F721122E4661F00A63745 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F721022E4661F00A63745 /* ViewController.swift */; };
 		A02F721422E4661F00A63745 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A02F721222E4661F00A63745 /* Main.storyboard */; };
@@ -43,7 +42,6 @@
 		A02F71E222E3254F00A63745 /* NetworkManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerProtocol.swift; sourceTree = "<group>"; };
 		A02F71E422E326D500A63745 /* URLRequest+Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Endpoint.swift"; sourceTree = "<group>"; };
 		A02F71E622E326F000A63745 /* URLComponents+Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLComponents+Endpoint.swift"; sourceTree = "<group>"; };
-		A02F720222E3301300A63745 /* APIEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEnvironment.swift; sourceTree = "<group>"; };
 		A02F720C22E4661F00A63745 /* Examples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Examples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A02F720E22E4661F00A63745 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A02F721022E4661F00A63745 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -111,7 +109,6 @@
 				A02F71D622E3238200A63745 /* NetworkError.swift */,
 				A02F71D822E323AD00A63745 /* NetworkResponse.swift */,
 				A02F71DA22E323D600A63745 /* EncodingType.swift */,
-				A02F720222E3301300A63745 /* APIEnvironment.swift */,
 				A02F71DC22E323FA00A63745 /* Endpoint.swift */,
 				A02F71DE22E3245E00A63745 /* EndpointProtocol.swift */,
 				A02F71E022E324C600A63745 /* NetworkManager.swift */,
@@ -255,7 +252,6 @@
 			files = (
 				A02F71D722E3238200A63745 /* NetworkError.swift in Sources */,
 				A02F71E722E326F000A63745 /* URLComponents+Endpoint.swift in Sources */,
-				A02F720322E3301300A63745 /* APIEnvironment.swift in Sources */,
 				A02F71E322E3254F00A63745 /* NetworkManagerProtocol.swift in Sources */,
 				A02F71D922E323AD00A63745 /* NetworkResponse.swift in Sources */,
 				A02F71D522E3234A00A63745 /* Task.swift in Sources */,
