@@ -11,12 +11,13 @@ import Foundation
 // MARK: Network Error Type
 
 public enum NetworkError: Error {
-    case unknownError
+    case unknownError(Data)
     case networkFailure
     case unAuthorized
     case emptyJSONData
     case noValidEthererumAddressFound
     case insufficentEthereumBalance(Data)
+    case invalidResponse
 }
 
 // MARK: Error Description
@@ -30,12 +31,14 @@ extension NetworkError: LocalizedError {
             return "Network failure happened"
         case .unAuthorized:
             return "Session timed out. Please log in"
-        case .unknownError:
+        case .unknownError(_):
             return "Unknown error happened. Weird !!"
         case .noValidEthererumAddressFound:
             return "No valid ethererum address found"
         case .insufficentEthereumBalance(_):
             return "Insufficent ethereum balance"
+        case .invalidResponse:
+            return "Invalid response received from server"
         }
     }
 }
