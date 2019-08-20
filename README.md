@@ -11,7 +11,7 @@ Network abstraction layer written in Swift to use in MenaPay iOS projects
 MPNetworking supports CocoaPods 
 
 ```swift
-pod 'MPNetworking', '0.0.1'
+pod 'MPNetworking', '0.2.2'
 ```
 
 
@@ -20,10 +20,7 @@ pod 'MPNetworking', '0.0.1'
 
 NetworkManager must be configured with at least four paramaters to make a call that doesn't requier bearer authentication
 
-- environment
-  - Staging
-  - Development
-  - Live
+- baseURL
 - clientVersion
 - clientType
 - userType
@@ -39,7 +36,7 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
         super.viewDidLoad()
         
-        networking = NetworkManager(environment: .staging,
+        networking = NetworkManager(baseURL: "myawesomeplatform.api.com",
                                     userType: "RESELLER",
                                     clientType: "menapay-business",
                                     clientVersion: "v3")       
@@ -112,10 +109,10 @@ class CountryLoader {
     }
     
     func getCountries() {
-        networking.request(type: [Country].self, endpoint: .getCountries()) { result in
+        networking.request(endpoint: .getCountries()) { result in
             switch result {
-            case .success(let countries):
-              self.handleCountryList(countries)
+            case .success(let responseData):
+              self.handleResponse(responseData)
             case .failure(let error):
               self.handleError(error)									              
             }
@@ -133,9 +130,10 @@ At some if the NetworkManager fails to make the request, it returns a NetworkErr
 
 ```swift
 public enum NetworkError: Error {
-    case unknownError
     case networkFailure
-    case unauthorized
+    case unAuthorized
     case emptyJSONData
+    case noValidEthererumAddressFound
+    case insufficentEthereumBalance(Data)
 }
 ```

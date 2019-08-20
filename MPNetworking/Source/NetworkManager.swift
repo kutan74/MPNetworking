@@ -91,6 +91,7 @@ extension NetworkManager: EndpointProtocol {
                 
         let task = session.dataTask(request: request, completionHandler: { [weak self] data, response, error in
             let httpResponse = response as? HTTPURLResponse
+            print(httpResponse!.statusCode)
             self?.handleDataResponse(data: data, response: httpResponse, error: error, completion: completion)
         })
         
@@ -115,6 +116,7 @@ extension NetworkManager: EndpointProtocol {
         guard error == nil else { return completion(.failure(.unknownError)) }
         guard let response = response else { return completion(.failure(.emptyJSONData)) }
         
+        print(response.statusCode)
         switch response.statusCode {
         case 200...299:
             guard let data = data else {
