@@ -122,7 +122,7 @@ extension NetworkManager: EndpointProtocol {
             }
             completion(.success(data))
         case 831:
-            completion(.failure(.insufficentEthereumBalance))
+            completion(.failure(.insufficentEthereumBalance(data!)))
         case 401:
             completion(.failure(.unAuthorized))
         default:

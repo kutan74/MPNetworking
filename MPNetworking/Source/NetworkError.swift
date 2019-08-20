@@ -16,7 +16,7 @@ public enum NetworkError: Error {
     case unAuthorized
     case emptyJSONData
     case noValidEthererumAddressFound
-    case insufficentEthereumBalance
+    case insufficentEthereumBalance(Data)
 }
 
 // MARK: Error Description
@@ -34,7 +34,7 @@ extension NetworkError: LocalizedError {
             return "Unknown error happened. Weird !!"
         case .noValidEthererumAddressFound:
             return "No valid ethererum address found"
-        case .insufficentEthereumBalance:
+        case .insufficentEthereumBalance(_):
             return "Insufficent ethereum balance"
         }
     }
