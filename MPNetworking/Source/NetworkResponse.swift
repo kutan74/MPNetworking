@@ -8,5 +8,6 @@
 
 public enum NetworkResponse {
     case success(Data)
-    case failure(Data?)
+    case failure(Error)
+    case failureResponse(Data)
 }

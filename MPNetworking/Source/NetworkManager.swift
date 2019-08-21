@@ -112,16 +112,16 @@ extension NetworkManager: EndpointProtocol {
                                                   error: Error?,
                                                   completion: (NetworkResponse) -> ()) {
         
-        guard let response = response else { return completion(.failure(nil)) }
+        guard let response = response else { return completion(.failure(error!)) }
         
         switch response.statusCode {
         case 200...299:
             guard let data = data else {
-                return completion(.failure(nil))
+                return completion(.failure(error!))
             }
             completion(.success(data))
         default:
-            completion(.failure(data))
+            completion(.failureResponse(data!))
         }
     }
 }
