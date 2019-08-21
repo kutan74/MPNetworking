@@ -112,14 +112,6 @@ extension NetworkManager: EndpointProtocol {
                                                   error: Error?,
                                                   completion: (NetworkResponse) -> ()) {
         
-        
-        guard error == nil else {
-            guard let data = data else {
-                return completion(.failure(.invalidResponse))
-            }
-            return completion(.failure(.unknownError(data)))
-            
-        }
         guard let response = response else { return completion(.failure(.emptyJSONData)) }
         
         switch response.statusCode {
@@ -128,8 +120,6 @@ extension NetworkManager: EndpointProtocol {
                 return completion(.failure(.emptyJSONData))
             }
             completion(.success(data))
-        case 849:
-            completion(.failure(.insufficentEthereumBalance(data!)))
         case 401:
             completion(.failure(.unAuthorized))
         default:
