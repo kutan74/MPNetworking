@@ -120,6 +120,8 @@ extension NetworkManager: EndpointProtocol {
                 return completion(.failure(error!))
             }
             completion(.success(data))
+        case 400:
+            completion(.failureResponse(data!))
         default:
             completion(.failureResponse(data!))
         }
