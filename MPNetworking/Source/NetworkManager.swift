@@ -112,12 +112,12 @@ extension NetworkManager: EndpointProtocol {
                                                   error: Error?,
                                                   completion: (NetworkResponse) -> ()) {
         
-        guard let response = response else { return completion(.failure(.emptyJSONData)) }
+        guard let response = response else { return completion(.failure(.networkFailure)) }
         
         switch response.statusCode {
         case 200...299:
             guard let data = data else {
-                return completion(.failure(.emptyJSONData))
+                return completion(.failure(.networkFailure))
             }
             completion(.success(data))
         case 401:
