@@ -122,6 +122,8 @@ extension NetworkManager: EndpointProtocol {
             completion(.success(data))
         case 400:
             completion(.failureResponse(data!))
+        case 401:
+            completion(.sessionTimedOut)
         default:
             completion(.failureResponse(data!))
         }

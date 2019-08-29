@@ -10,4 +10,5 @@ public enum NetworkResponse {
     case success(Data)
     case failure(Error)
     case failureResponse(Data)
+    case sessionTimedOut
 }
