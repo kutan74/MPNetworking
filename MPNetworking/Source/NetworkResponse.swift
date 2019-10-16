@@ -8,7 +8,6 @@
 
 public enum NetworkResponse {
     case success(Data)
-    case failure(Error)
-    case failureResponse(Data)
-    case sessionTimedOut
+    case failure(data: Data?, code: Int?, error: Error?)    
 }
+

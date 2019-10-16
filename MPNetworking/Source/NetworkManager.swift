@@ -120,20 +120,19 @@ extension NetworkManager: EndpointProtocol {
                                                   error: Error?,
                                                   completion: (NetworkResponse) -> ()) {
         
-        guard let response = response else { return completion(.failure(error!)) }
+        guard let response = response else { return completion(.failure(data: data, code: nil, error: error)) }
         
         switch response.statusCode {
         case 200...299:
             guard let data = data else {
-                return completion(.failure(error!))
+                return completion(.failure(data: nil, code: nil, error: error))
             }
             completion(.success(data))
-        case 400:
-            completion(.failureResponse(data!))
-        case 401:
-            completion(.sessionTimedOut)
         default:
-            completion(.failureResponse(data!))
+            guard let data = data else {
+                return completion(.failure(data: nil, code: response.statusCode, error: error))
+            }
+            completion(.failure(data: data, code: response.statusCode, error: error))
         }
     }
 }
