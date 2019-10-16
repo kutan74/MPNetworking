@@ -19,4 +19,12 @@ Localizable
 "Back to MenaPay Wallet" = "";
 "Amount of Transfer Credit remaining" = "";
 "Your token transaction was successful." = "";
+"Connect to Twitch" = "";
+"Twitch Help" = "";
+"We've successfully received your request. We will notify you when the transaction is completed" = "";
+"Your ethereum balance is insufficent to complete this transaction. To complete the transaction you can exchange" +
+            " \(amountRequired) MenaCash"
 
+"Refreshing transactions" = "";
+
+ 

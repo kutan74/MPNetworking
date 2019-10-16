@@ -11,7 +11,6 @@ import Foundation
 // MARK: API
 
 open class NetworkManager {
-    
     /// URLSession
     private var session: NetworkMangerProtocol
     
@@ -22,19 +21,19 @@ open class NetworkManager {
     private let baseURL: String
     
     /// MenaPay User Type
-    private let userType: String
+    private let userType: String?
     
     /// API Client Type
-    private let clientType: String
+    private let clientType: String?
     
     /// API Client Version
-    private let clientVersion: String
+    private let clientVersion: String?
     
     public init(session: NetworkMangerProtocol = URLSession.shared,
                 baseURL: String,
-                userType: String,
-                clientType: String,
-                clientVersion: String) {
+                userType: String? = nil,
+                clientType: String? = nil,
+                clientVersion: String? = nil) {
         self.session = session
         self.baseURL = baseURL
         self.userType = userType
@@ -81,10 +80,19 @@ extension NetworkManager: EndpointProtocol {
         var request = URLRequest(endpoint: endpoint, baseURL: baseURL)
                 
         /// Default client parameters
-        request.addValue(clientVersion, forHTTPHeaderField: "menapay-version")
-        request.addValue(clientType, forHTTPHeaderField: "menapay-client")
-        request.addValue(userType, forHTTPHeaderField: "userType")
         
+        if let clientVersion = clientVersion {
+            request.addValue(clientVersion, forHTTPHeaderField: "menapay-version")
+        }
+                    
+        if let clientType = clientType {
+            request.addValue(clientType, forHTTPHeaderField: "menapay-client")
+        }
+        
+        if let userType = userType {
+            request.addValue(userType, forHTTPHeaderField: "userType")
+        }
+                    
         if endpoint.authenticationRequired {
             request.addValue("Bearer \(token!)", forHTTPHeaderField: "Authorization")
         }
