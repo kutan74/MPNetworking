@@ -29,16 +29,20 @@ open class NetworkManager {
     /// API Client Version
     private let clientVersion: String?
     
+    private var customHeaders: [String: String]?
+    
     public init(session: NetworkMangerProtocol = URLSession.shared,
                 baseURL: String,
                 userType: String? = nil,
                 clientType: String? = nil,
-                clientVersion: String? = nil) {
+                clientVersion: String? = nil,
+                customHeaders: [String: String]?) {
         self.session = session
         self.baseURL = baseURL
         self.userType = userType
         self.clientType = clientType
         self.clientVersion = clientVersion
+        self.customHeaders = customHeaders
     }
 }
 
@@ -92,10 +96,17 @@ extension NetworkManager: EndpointProtocol {
         if let userType = userType {
             request.addValue(userType, forHTTPHeaderField: "userType")
         }
+        
+        if let customHeaders = customHeaders {
+            for (key, value) in customHeaders {
+                request.addValue(value, forHTTPHeaderField: key)
+            }
+        }
                     
         if endpoint.authenticationRequired {
             request.addValue("Bearer \(token!)", forHTTPHeaderField: "Authorization")
         }
+        
                 
         let task = session.dataTask(request: request, completionHandler: { [weak self] data, response, error in
             let httpResponse = response as? HTTPURLResponse
