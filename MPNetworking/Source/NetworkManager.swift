@@ -31,6 +31,7 @@ open class NetworkManager {
     
     private var customHeaders: [String: String]?
     
+    
     public init(session: NetworkMangerProtocol = URLSession.shared,
                 baseURL: String,
                 userType: String? = nil,
