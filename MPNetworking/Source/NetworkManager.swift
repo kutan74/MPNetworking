@@ -155,6 +155,7 @@ extension NetworkManager: EndpointProtocol {
         }
     }
     
+    /// Decoder
     func decodeFailureMessageFromResponse(from data: Data) throws -> FailureResponse {
         let container = try JSONDecoder().decode(FailureResponse.self, from: data)
         return container
