@@ -131,20 +131,33 @@ extension NetworkManager: EndpointProtocol {
                                                   response: HTTPURLResponse?,
                                                   error: Error?,
                                                   completion: (NetworkResponse) -> ()) {
-        
-        guard let response = response else { return completion(.failure(data: data, code: nil, error: error)) }
+        guard let response = response else {
+            return completion(.failure(data: data, code: nil, message: ""))
+            
+        }
         
         switch response.statusCode {
         case 200...299:
             guard let data = data else {
-                return completion(.failure(data: nil, code: nil, error: error))
+                return completion(.failure(data: nil, code: nil, message: ""))
             }
             completion(.success(data))
         default:
             guard let data = data else {
-                return completion(.failure(data: nil, code: response.statusCode, error: error))
+                return completion(.failure(data: nil, code: response.statusCode, message: ""))
             }
-            completion(.failure(data: data, code: response.statusCode, error: error))
+            do {
+                let failureRespnse = try self.decodeFailureMessageFromResponse(from: data)
+                completion(.failure(data: data, code: response.statusCode, message: failureRespnse.message!))
+            } catch {
+                return completion(.failure(data: nil, code: response.statusCode, message: ""))
+            }
         }
     }
+    
+    func decodeFailureMessageFromResponse(from data: Data) throws -> FailureResponse {
+        let container = try JSONDecoder().decode(FailureResponse.self, from: data)
+        return container
+    }
 }
+
