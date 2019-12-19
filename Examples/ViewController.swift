@@ -24,6 +24,6 @@ class ViewController: UIViewController {
 
 extension Endpoint {
     static func test() -> Endpoint {
-        return Endpoint(path: "/test", method: .get, task: .requestMultipleQuery(["key": ["value1", "value2"]]),authenticationRequired: false, parametersEncoding: .query)
+        return Endpoint(path: "/test", method: .post, task: .requestParameters(["key": "value"]),authenticationRequired: false, parametersEncoding: .body)
     }
 }

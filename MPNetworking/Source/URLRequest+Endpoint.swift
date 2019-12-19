@@ -36,7 +36,7 @@ extension URLRequest {
             httpBody = parameters
             setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")        
         default:
-            break
+            return
         }
     }
 }
