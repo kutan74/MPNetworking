@@ -10,11 +10,14 @@
 /// Public typealias representing [String: Any]
 public typealias Parameters = [String: Any]
 public typealias RawBodyParameter = Data
+public typealias MultiPartParameter = Data
+public typealias DuplicateQuery = [String: Any]
 
 // MARK: Task
 
 public enum Task {
     case requestPlain
     case requestParameters(Parameters)
-    case requestRawBody(RawBodyParameter)
+    case requestMultipleQuery(DuplicateQuery)
+    case requestRawBody(RawBodyParameter)    
 }

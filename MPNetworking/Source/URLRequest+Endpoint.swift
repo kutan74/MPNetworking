@@ -31,13 +31,12 @@ extension URLRequest {
         switch endpoint.task {
         case .requestParameters(let parameters):
             httpBody = try? JSONSerialization.data(withJSONObject: parameters)
+            setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
         case .requestRawBody(let parameters):
             httpBody = parameters
+            setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")        
         default:
             break
         }
-        
-        
-        setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
     }
 }

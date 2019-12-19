@@ -15,6 +15,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        
+        let networking = NetworkManager(baseURL: "https://google.com", userType: "test", clientType: "TEST", clientVersion: "v2", customHeaders: [:])
+        networking.request(endpoint: .test()) { result in
+            
+        }
+    }
+}
+
+extension Endpoint {
+    static func test() -> Endpoint {
+        return Endpoint(path: "/test", method: .get, task: .requestMultipleQuery(["key": ["value1", "value2"]]),authenticationRequired: false, parametersEncoding: .query)
     }
 }
