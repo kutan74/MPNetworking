@@ -15,15 +15,23 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        let networking = NetworkManager(baseURL: "https://google.com", userType: "test", clientType: "TEST", clientVersion: "v2", customHeaders: [:])
-        networking.request(endpoint: .test()) { result in
+        let networking = NetworkManager(baseURL: "https://jsonplaceholder.typicode.com", userType: "", clientType: "", clientVersion: "", customHeaders: [:])
+        networking.request(endpoint: .todos1()) { result in
             
         }
     }
 }
 
 extension Endpoint {
-    static func test() -> Endpoint {
-        return Endpoint(path: "/test", method: .post, task: .requestParameters(["key": "value"]),authenticationRequired: false, parametersEncoding: .body)
+    static func todos1() -> Endpoint {
+        return Endpoint(path: "/todos/1", method: .get, task: .requestPlain,authenticationRequired: false, parametersEncoding: .query)
+    }
+    
+    static func commentsQuery() -> Endpoint {
+        return Endpoint(path: "/comments", method: .post, task: .requestMultipleQuery(["params": ["key1","key2"]]),authenticationRequired: false, parametersEncoding: .query)
+    }
+    
+    static func simpleBodyPost() -> Endpoint {
+        return Endpoint(path: "/comments", method: .post, task: .requestParameters(["key": "value"]),authenticationRequired: false, parametersEncoding: .body)
     }
 }

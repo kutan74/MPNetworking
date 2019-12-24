@@ -21,8 +21,10 @@ extension URLComponents {
         let url = baseURL.appendingPathComponent(endpoint.path)
         self.init(url: url, resolvingAgainstBaseURL: false)!
         
-        guard case let .requestParameters(parameters) = endpoint.task, endpoint.parametersEncoding == .query else { return }
-        
+        guard endpoint.parametersEncoding != .body else {
+            return
+        }
+                
         switch endpoint.task {
         case .requestParameters(let parameters):
             endpoint.parametersEncoding = .query

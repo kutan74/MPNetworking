@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "MPNetworking"
-  s.version      = "0.3.7"
+  s.version      = "0.3.8"
   s.summary      = "Network abstraction layer written in Swift"
   s.description  = <<-EOS
   Allows to abstract your networking layer. MPNetworking doesn't use singleton patterns
