@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         let networking = NetworkManager(baseURL: "https://jsonplaceholder.typicode.com", userType: "", clientType: "", clientVersion: "", customHeaders: [:])
-        networking.request(endpoint: .todos1()) { result in
+        networking.request(endpoint: .commentsQuery()) { result in
             
         }
     }
@@ -28,7 +28,7 @@ extension Endpoint {
     }
     
     static func commentsQuery() -> Endpoint {
-        return Endpoint(path: "/comments", method: .post, task: .requestMultipleQuery(["params": ["key1","key2"]]),authenticationRequired: false, parametersEncoding: .query)
+        return Endpoint(path: "/comments", method: .get, task: .requestMultipleQuery(["params": ["key1","key2"]]),authenticationRequired: false, parametersEncoding: .query)
     }
     
     static func simpleBodyPost() -> Endpoint {
